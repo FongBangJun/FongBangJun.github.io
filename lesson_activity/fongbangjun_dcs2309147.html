@@ -21,34 +21,34 @@ text-align: center;
 <tbody id="friendTable"></tbody>
 </table>
 <script>
-fetch('fongbangjun_dcs2309147.xml') 
-.then(response => response.text())
-.then(data => {
-const parser = new DOMParser();
-const xmlDoc = parser.parseFromString(data, 'text/xml');
-const friends = xmlDoc.getElementsByTagName('friend');
-const table = document.getElementById('friendTable');
-for (let i = 0; i < friend.length; i++) 
-{
-const friend = friends[i];
-const name = friend.getElementsByTagName('name')[0].textContent;
-const age = friend.getElementsByTagName('age')[0].textContent;
-const hp = friend.getElementsByTagName('hp')[0].textContent;
-const studentid = friend.getElementsByTagName('studentid')[0].textContent;
-const row = table.insertRow(i);
-const numberCell = row.insertCell(0);
-const nameCell = row.insertCell(1);
-const ageCell = row.insertCell(2);
-const hpCell = row.insertCell(3);
-const studentidCell = row.insertCell(4);
-numberCell.innerHTML = i + 1;
-nameCell.innerHTML = name;
-ageCell.innerHTML = age;
-hpCell.innerHTML = hp;
-studentidCell.innerHTML = studentid;
-}
-})
-.catch(error => console.error(error));
+fetch('fongbangjun_dcs2309147.xml')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data, 'text/xml');
+    const friends = xmlDoc.getElementsByTagName('friend');
+    const table = document.getElementById('friendTable');
+    for (let i = 0; i < friends.length; i++) {
+      const friend = friends[i];
+      const name = friend.getElementsByTagName('name')[0].textContent;
+      const age = friend.getElementsByTagName('age')[0].textContent;
+      const hp = friend.getElementsByTagName('hp')[0].textContent;
+      const studentid = friend.getElementsByTagName('studentid')[0].textContent;
+      const row = table.insertRow(i);
+      const numberCell = row.insertCell(0);
+      const nameCell = row.insertCell(1);
+      const ageCell = row.insertCell(2);
+      const hpCell = row.insertCell(3);
+      const studentidCell = row.insertCell(4);
+      numberCell.innerHTML = i + 1;
+      nameCell.innerHTML = name;
+      ageCell.innerHTML = age;
+      hpCell.innerHTML = hp;
+      studentidCell.innerHTML = studentid;
+    }
+  })
+  .catch(error => console.error(error));
 </script>
+
 </body>
 </html>
