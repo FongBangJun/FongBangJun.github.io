@@ -1,0 +1,60 @@
+<list>
+    <friend>
+        <name>Oliver Chan Jien Meng</name>
+        <age>17</age>
+        <hp>+60 1157707880</hp>
+        <studentid>DCS2304</studentid>
+    </friend>
+
+    <friend>
+        <name>Jimmy Ling Wan Quan</name>
+        <age>17</age>
+        <hp>+60 167205961</hp>
+        <studentid>DCS2309150</studentid>
+    </friend>
+
+    <friend>
+        <name>Kiefer Quek</name>
+        <age>18</age>
+        <hp>+60 167875369</hp>
+        <studentid>DCS2304</studentid>
+    </friend>
+
+    <friend>
+        <name>Foo Wen Jie</name>
+        <age>18</age>
+        <hp>+60 164311173</hp>
+        <studentid>DCS2309148</studentid>
+    </friend>
+
+    <friend>
+        <name>Isaiah Chan</name>
+        <age>19</age>
+        <hp>+60 1162168918</hp>
+        <studentid>DCS2309</studentid>
+    </friend>
+
+    <friend>
+        <name>Ong Hong Jun</name>
+        <age>18</age>
+        <hp>+60 187787367</hp>
+        <studentid>DCS2309</studentid>
+    </friend>
+
+    <friend>
+        <name>Lee Zheng Kang</name>
+        <age>18</age>
+        <hp>+60 122176882</hp>
+        <studentid>DCS2309</studentid>
+    </friend>
+
+    <friend>
+        <name>Alnis Chan Wei Yu</name>
+        <age>18</age>
+        <hp>+60 167730690</hp>
+        <studentid> - </studentid>
+    </friend>
+
+
+   
+</list>
