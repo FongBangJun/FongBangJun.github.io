@@ -1,0 +1,19 @@
+body {
+topmargin=50;
+leftmargin=40;
+background-color:oldlace;
+}
+
+table {
+background-color:powderblue;
+color:#696969;
+font-family:verdana;
+text-align:left;
+width:90%;
+height:60%;
+}
+
+th {
+background-color:darkblue;
+color:red;
+}
