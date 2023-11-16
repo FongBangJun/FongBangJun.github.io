@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Light_Novel Store</title>
+<link rel=icon href=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOLHBDS9F6ojE03vzPuPFLYMFrSlhGTle5uTLYqvdw&s type=image/jpg>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+<link rel="stylesheet" type="text/css" href="store.css">
+</head>
+
+<body>
+
+<header>
+<h1><a name="point_here">My Light Novel Store</h1>
+</header>
+
+<table class="table1">
+<tr>
+<th width=20%><a href="fongbangjun_dcs2309147_home.html" target="_self" class="button">Home</a></th>
+<th width=20%><a href="fongbangjun_dcs2309147_spage.html" target="_self" class="button">Best Seller</a></th>
+<th width=20%><a href="fongbangjun_dcs2309147_tpage.html" target="_self" class="button">Latest Release</a></th>
+<th width=20%><a href="#point_here" class="button">Recently Updated</a></th>
+<th width=20%><a href="fongbangjun_dcs2309147_account.html" target="_self" class="button">Account</a></th>
+</tr>
+</table>
+
+<section>
+
+<div class="product">
+<img onmouseover="bigImg(this)"
+onmouseout="normalImg(this)"
+src="https://imgservice.suning.cn/uimg1/b2c/image/xFlniQ-ytm3Wcy8IQ3KPXw.jpg" alt="Product1" height=400 width=300>
+<h2>魔王学院的不适任者<br>
+The Misfit of Demon King Academy</h2>
+<p><b>Genre:</b> Adventure, Fantasy, Romance</p>
+<p>800 yen</p>
+<button onclick="addToCart('The Misfit of Demon King', 800); openCartModal()">Add to Cart</button>
+</div>
+
+</section>
+
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCartModal()">&times;</span>
+        <h2>---Your Cart---</h2>
+        <ul id="cartItems"></ul>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+
+<footer>
+<p>&copy; 2023 My Light Novel Store. All rights reserved.</p>
+</footer>
+
+<script type="text/javascript" src="store.js"></script>
+<script type="text/javascript" src="cart.js"></script>
+
+</body>
+</html>
