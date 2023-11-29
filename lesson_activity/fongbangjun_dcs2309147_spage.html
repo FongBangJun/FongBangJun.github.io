@@ -32,7 +32,9 @@ src="https://upload.wikimedia.org/wikipedia/zh/4/41/Sword_Art_Online_%28TW01%29.
 Sword Art Online</h2>
 <p><b>Genre:</b> Adventure, Science Fiction</p>
 <p>800 yen</p>
-<button onclick="addToCart('Sword Art Online', 800); openCartModal()">Add to Cart</buton>
+<label for="quantity6">Quantity:</label>
+<input type="number" id="quantity6" name="quantity" value="1" min="1">
+<button onclick="addToCart('Sword Art Online', 35000, document.getElementById('quantity6').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -44,7 +46,9 @@ src="https://upload.wikimedia.org/wikipedia/zh/5/52/Y%C5%8Dkoso_Jitsuryoku_Shij%
 Classroom of The Elite</h2>
 <p><b>Genre:</b> Psychological thriller</p>
 <p>800 yen</p>
-<button onclick="addToCart('Classroom of The Elite', 800); openCartModal()">Add to Cart</button>
+<label for="quantity7">Quantity:</label>
+<input type="number" id="quantity7" name="quantity" value="1" min="1">
+<button onclick="addToCart('Classroom of The Elite', 40000, document.getElementById('quantity7').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -54,7 +58,9 @@ onmouseout="normalImg(this)" src="https://d26olvxuieoyaa.cloudfront.net/catalog/
 Bofuri: I Don't Want to Get Hurt, so I'll Max Out my Defense.</h2>
 <p><b>Genre:</b> Comedy</p>
 <p>1000 yen</p>
-<button onclick="addToCart('Bofuri: I Dont Want to Get Hurt, so Ill Max Out my Defense.', 1000); openCartModal()">Add to Cart</button>
+<label for="quantity8">Quantity:</label>
+<input type="number" id="quantity8" name="quantity" value="1" min="1">
+<button onclick="addToCart('Bofuri: I Dont Want to Get Hurt, so Ill Max Out my Defense.', 1000, document.getElementById('quantity8').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -65,7 +71,9 @@ src="https://w.linovelib.com/files/article/image/2/2499/2499s.jpg" alt="best4" h
 My Stepsister is My Ex-Girlfriend</h2>
 <p><b>Genre:</b> Romantic comedy</p>
 <p>800 yen</p>
-<button onclick="addToCart('My Stepsister is My Ex-Girlfriend', 800); openCartModal()">Add to Cart</button>
+<label for="quantity9">Quantity:</label>
+<input type="number" id="quantity9" name="quantity" value="1" min="1">
+<button onclick="addToCart('My Stepsister is My Ex-Girlfriend', 800, document.getElementById('quantity9').value); openCartModal()">Add to Cart</button>
 </div>
 
 </section>
@@ -75,6 +83,7 @@ My Stepsister is My Ex-Girlfriend</h2>
         <span class="close" onclick="closeCartModal()">&times;</span>
         <h2>---Your Cart---</h2>
         <ul id="cartItems"></ul>
+        <p id="total">Total: ¥0.00</p>
     </div>
 </div>
 
