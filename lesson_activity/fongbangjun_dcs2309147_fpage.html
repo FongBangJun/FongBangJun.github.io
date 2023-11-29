@@ -32,7 +32,9 @@ src="https://imgservice.suning.cn/uimg1/b2c/image/xFlniQ-ytm3Wcy8IQ3KPXw.jpg" al
 The Misfit of Demon King Academy</h2>
 <p><b>Genre:</b> Adventure, Fantasy, Romance</p>
 <p>800 yen</p>
-<button onclick="addToCart('The Misfit of Demon King', 800); openCartModal()">Add to Cart</button>
+<label for="quantity3">Quantity:</label>
+<input type="number" id="quantity3" name="quantity" value="1" min="1">
+<button onclick="addToCart('The Misfit of Demon King', 800, document.getElementById('quantity3').value); openCartModal()">Add to Cart</button>
 </div>
 
 </section>
@@ -42,6 +44,7 @@ The Misfit of Demon King Academy</h2>
         <span class="close" onclick="closeCartModal()">&times;</span>
         <h2>---Your Cart---</h2>
         <ul id="cartItems"></ul>
+        <p id="total">Total: ¥0.00</p>
     </div>
 </div>
 
