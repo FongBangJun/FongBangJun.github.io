@@ -32,7 +32,9 @@ src="https://taiwan-image.bookwalker.com.tw/product/177889/zoom_big_177889.jpg" 
 Reunited with My Former Lover on a Dating App.</h2>
 <p><b>Genre:</b> Comedy, Drama, Romance</p>
 <p>800 yen</p>
-<button onclick="addToCart('Reunited with My Former Lover on a Dating App', 800); openCartModal()">Add to Cart</button>
+<label for="quantity1">Quantity:</label>
+<input type="number" id="quantity1" name="quantity" value="1" min="1">
+<button onclick="addToCart('Reunited with My Former Lover on a Dating App', 800, document.getElementById('quantity1').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -43,7 +45,9 @@ src="https://www.bilinovel.com/files/article/image/3/3861/3861s.jpg" alt="Latest
 Rakuen Koroshi</h2>
 <p><b>Genre:</b> Science Fiction, Super Power, Combat, Dark</p>
 <p>550 yen</p>
-<button onclick="addToCart('Rakuen Koroshi', 550); openCartModal()">Add to Cart</button>
+<label for="quantity2">Quantity:</label>
+<input type="number" id="quantity2" name="quantity" value="1" min="1">
+<button onclick="addToCart('Rakuen Koroshi', 550, document.getElementById('quantity2').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -54,7 +58,9 @@ src="https://img.wenku8.com/image/3/3532/3532s.jpg" alt="Latest4" height=400 wid
 My Summoned Beast Is Dead</h2>
 <p><b>Genre:</b> Action, Adventure, Comedy, Fantasy, Romance</p>
 <p>600 yen</p>
-<button onclick="addToCart('My Summonned Beast Is Dead', 600); openCartModal()">Add to Cart</button>
+<label for="quantity4">Quantity:</label>
+<input type="number" id="quantity4" name="quantity" value="1" min="1">
+<button onclick="addToCart('My Summoned Beast Is Dead', 600, document.getElementById('quantity4').value); openCartModal()">Add to Cart</button>
 </div>
 
 <div class="product">
@@ -65,7 +71,9 @@ src="https://img.mandarake.co.jp/webshopimg/01/00/693/0100783693/01007836930.jpg
 An Assassin who Eventually becomes A Romantic Comedy</h2>
 <p><b>Genre:</b> Comedy, Romance</p>
 <p>600 yen</p>
-<button onclick="addToCart('An Assassin who Eventually becomes A Romantic Comedy', 600); openCartModal()">Add to Cart</button>
+<label for="quantity5">Quantity:</label>
+<input type="number" id="quantity5" name="quantity" value="1" min="1">
+<button onclick="addToCart('An Assassin who Eventually becomes A Romantic Comedy', 600, document.getElementById('quantity5').value); openCartModal()">Add to Cart</button>
 </div>
 
 </section>
@@ -75,6 +83,7 @@ An Assassin who Eventually becomes A Romantic Comedy</h2>
         <span class="close" onclick="closeCartModal()">&times;</span>
         <h2>---Your Cart---</h2>
         <ul id="cartItems"></ul>
+        <p id="total">Total: ¥0.00</p>
     </div>
 </div>
 
