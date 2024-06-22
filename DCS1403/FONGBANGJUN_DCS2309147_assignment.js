@@ -24,8 +24,8 @@ function setup() {
 }
 
 function draw() {
-	background(0);
-	//background('darkblue');
+	//background(0);
+	background('darkblue');
 
 	push();
 	
