@@ -11,7 +11,7 @@ let frameTime = 0;
 let img;
 
 function preload() {
-    img = loadImage("logo.png"); // Update variable assignment
+    img = loadImage("logo.png");
 }
 
 function setup() {
@@ -28,11 +28,9 @@ function draw() {
 
 	push();
 	
-// Move the origin to the center of the canvas
 	translate(width / 2, height / 2);
   
 // Rotate the entire canvas
-	//rotate(angle);
 	angle += rotationSpeed;
 	rotationSpeed += sin(a)*acceleration;
 	a += 4;
