@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendee Home</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm border-0 rounded-4 mx-auto" style="max-width: 800px;">
+            <div class="card-body p-5">
+                <h1 class="display-6 fw-bold">🎟️ Attendee Home</h1>
+                <p class="text-muted mb-4"><strong><%= settings.site_name %></strong> – <%= settings.site_description %></p>
+
+                <h2 class="h4 fw-bold border-start border-success border-4 ps-3 mb-3">📅 Upcoming Events</h2>
+                <% if (events.length > 0) { %>
+                    <div class="list-group">
+                        <% events.forEach(event => { %>
+                            <a href="/attendee/event/<%= event.event_id %>" 
+                               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center rounded-3 mb-2 border">
+                                <span class="fw-semibold"><%= event.title %></span>
+                                <span class="badge bg-secondary rounded-pill"><%= event.event_date %></span>
+                            </a>
+                        <% }); %>
+                    </div>
+                <% } else { %>
+                    <p class="text-muted fst-italic">No upcoming events.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

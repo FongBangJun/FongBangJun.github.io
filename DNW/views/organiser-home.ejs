@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organiser Home</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <!-- Header -->
+                <div class="d-flex flex-wrap justify-content-between align-items-start border-bottom pb-4 mb-4">
+                    <div>
+                        <h1 class="display-6 fw-bold">📋 Organiser Home</h1>
+                        <p class="text-muted"><strong><%= settings.site_name %></strong> – <%= settings.site_description %></p>
+                    </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="/organiser/settings" class="btn btn-outline-secondary">⚙️ Settings</a>
+                        <a href="/organiser/event/new" class="btn btn-primary">➕ Create Event</a>
+                    </div>
+                </div>
+
+                <!-- Published Events -->
+                <div class="mb-5">
+                    <h2 class="h4 fw-bold border-start border-primary border-4 ps-3 mb-3">📢 Published Events</h2>
+                    <% if (published.length > 0) { %>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>Created</th>
+                                        <th>Published</th>
+                                        <th>Tickets</th>
+                                        <th class="text-center" style="min-width: 140px;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% published.forEach(event => { %>
+                                        <tr>
+                                            <td><strong><%= event.title %></strong></td>
+                                            <td><%= event.event_date %></td>
+                                            <td><%= new Date(event.created_at).toLocaleDateString() %></td>
+                                            <td><%= event.published_at ? new Date(event.published_at).toLocaleDateString() : '-' %></td>
+                                            <td><%= event.total_tickets || 0 %></td>
+                                            <td>
+                                                <div class="d-flex gap-1 justify-content-center flex-wrap">
+                                                    <a href="/attendee/event/<%= event.event_id %>" class="btn btn-sm btn-info text-white">🔗 Share</a>
+                                                    <form action="/organiser/event/<%= event.event_id %>/delete" method="post">
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this event?')">🗑️ Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    <% } else { %>
+                        <p class="text-muted fst-italic">No published events yet.</p>
+                    <% } %>
+                </div>
+
+                <!-- Draft Events -->
+                <div>
+                    <h2 class="h4 fw-bold border-start border-warning border-4 ps-3 mb-3">✏️ Draft Events</h2>
+                    <% if (drafts.length > 0) { %>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th>Created</th>
+                                        <th>Tickets</th>
+                                        <th class="text-center" style="min-width: 200px;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% drafts.forEach(event => { %>
+                                        <tr>
+                                            <td><strong><%= event.title %></strong></td>
+                                            <td><%= event.event_date %></td>
+                                            <td><%= new Date(event.created_at).toLocaleDateString() %></td>
+                                            <td><%= event.total_tickets || 0 %></td>
+                                            <td>
+                                                <div class="d-flex gap-1 justify-content-center flex-wrap">
+                                                    <a href="/organiser/event/<%= event.event_id %>" class="btn btn-sm btn-primary">✏️ Edit</a>
+                                                    <form action="/organiser/event/<%= event.event_id %>/publish" method="post">
+                                                        <button type="submit" class="btn btn-sm btn-success">✅ Publish</button>
+                                                    </form>
+                                                    <form action="/organiser/event/<%= event.event_id %>/delete" method="post">
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this draft?')">🗑️ Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    <% } else { %>
+                        <p class="text-muted fst-italic">No drafts.</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

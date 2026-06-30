@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Details</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm border-0 rounded-4 mx-auto" style="max-width: 700px;">
+            <div class="card-body p-5">
+                <h1 class="h2 fw-bold"><%= event.title %></h1>
+                <div class="text-muted mb-3">
+                    <p class="mb-0"><%= event.description %></p>
+                    <p class="fw-semibold mt-1">📅 <%= event.event_date %></p>
+                </div>
+                <a href="/attendee" class="btn btn-link text-decoration-none ps-0 mb-3">↩️ Back</a>
+
+                <!-- Messages -->
+                <% if (success) { %>
+                    <div class="alert alert-success">✅ Booking successful!</div>
+                <% } %>
+                <% if (error) { %>
+                    <div class="alert alert-danger">❌ <%= error %></div>
+                <% } %>
+
+                <!-- Booking Form -->
+                <form action="/attendee/event/<%= event.event_id %>/book" method="post">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Your Name</label>
+                        <input type="text" name="attendee_name" class="form-control" required>
+                    </div>
+
+                    <h6 class="fw-bold border-top pt-3 mb-3">🎫 Select Tickets</h6>
+                    <% tickets.forEach(ticket => { %>
+                        <div class="bg-light p-3 rounded-3 mb-2 d-flex flex-wrap justify-content-between align-items-center">
+                            <div>
+                                <span class="fw-semibold"><%= ticket.type_name %></span>
+                                <span class="text-muted">– £<%= ticket.price %></span>
+                                <span class="badge bg-secondary ms-2">Available: <%= ticket.quantity_available %></span>
+                            </div>
+                            <input type="number" 
+                                   name="ticket_qty_<%= ticket.ticket_type_id %>" 
+                                   min="0" max="<%= ticket.quantity_available %>" value="0"
+                                   class="form-control w-25" style="max-width: 100px;">
+                        </div>
+                    <% }); %>
+
+                    <button type="submit" class="btn btn-success btn-lg w-100 mt-3">🎟️ Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

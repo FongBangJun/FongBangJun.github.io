@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Event</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm border-0 rounded-4 mx-auto" style="max-width: 750px;">
+            <div class="card-body p-5">
+                <h1 class="h3 fw-bold mb-2">✏️ Edit Event</h1>
+                <div class="text-muted small mb-4">
+                    <p class="mb-0">Created: <%= event.created_at %></p>
+                    <p>Last Modified: <%= event.last_modified %></p>
+                </div>
+
+                <form action="/organiser/event/<%= event.event_id %>" method="post">
+                    <!-- Event Details -->
+                    <div class="border-bottom pb-4 mb-4">
+                        <h6 class="fw-bold">Event Details</h6>
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" name="title" value="<%= event.title %>" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <input type="text" name="description" value="<%= event.description %>" class="form-control" required>
+                        </div>
+                        <div>
+                            <label class="form-label">Event Date</label>
+                            <input type="date" name="event_date" value="<%= event.event_date %>" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Types -->
+                    <h6 class="fw-bold mb-3">🎫 Ticket Types</h6>
+                    
+                    <div class="bg-light p-4 rounded-3 mb-3">
+                        <h6 class="fw-bold">Full Price</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small">Price (£)</label>
+                                <input type="number" step="0.01" name="full_price" value="<%= fullTicket.price %>" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small">Quantity</label>
+                                <input type="number" name="full_qty" value="<%= fullTicket.quantity_available %>" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-light p-4 rounded-3 mb-4">
+                        <h6 class="fw-bold">Concession</h6>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small">Price (£)</label>
+                                <input type="number" step="0.01" name="conc_price" value="<%= concessionTicket.price %>" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small">Quantity</label>
+                                <input type="number" name="conc_qty" value="<%= concessionTicket.quantity_available %>" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-primary">💾 Submit Changes</button>
+                        <a href="/organiser" class="btn btn-secondary">↩️ Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

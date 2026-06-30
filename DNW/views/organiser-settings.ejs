@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site Settings</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-sm border-0 rounded-4 mx-auto" style="max-width: 600px;">
+            <div class="card-body p-5">
+                <h1 class="h3 fw-bold mb-4">⚙️ Site Settings</h1>
+                <form action="/organiser/settings" method="post">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Site Name</label>
+                        <input type="text" name="site_name" value="<%= settings.site_name %>" class="form-control" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Description</label>
+                        <input type="text" name="site_description" value="<%= settings.site_description %>" class="form-control" required>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-primary">💾 Update Settings</button>
+                        <a href="/organiser" class="btn btn-secondary">↩️ Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
