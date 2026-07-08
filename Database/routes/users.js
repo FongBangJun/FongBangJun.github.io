@@ -11,8 +11,13 @@
 const express = require("express");
 const router = express.Router();
 
+// START OF MY CODE
+
 /**
  * @desc Display all the users
+ * @purpose Retrieve all user records from the database and return them as JSON
+ * @inputs None
+ * @outputs JSON array of user objects
  */
 router.get("/list-users", (req, res, next) => {
     // Define the query
@@ -32,6 +37,9 @@ router.get("/list-users", (req, res, next) => {
 
 /**
  * @desc Displays a page with a form for creating a user record
+ * @purpose Render the 'add-user.ejs' view to the client
+ * @inputs None
+ * @outputs HTML page containing the add-user form
  */
 router.get("/add-user", (req, res) => {
     res.render("add-user.ejs");
@@ -39,6 +47,9 @@ router.get("/add-user", (req, res) => {
 
 /**
  * @desc Add a new user to the database based on data from the submitted form
+ * @purpose Insert a new user record into the 'users' table
+ * @inputs User name from the request body (req.body.user_name)
+ * @outputs Confirmation message with the ID of the newly inserted record
  */
 router.post("/add-user", (req, res, next) => {
     // Define the query
@@ -57,6 +68,8 @@ router.post("/add-user", (req, res, next) => {
         }
     );
 });
+
+// END OF MY CODE
 
 // Export the router object so index.js can access it
 module.exports = router;
