@@ -5,6 +5,19 @@ halo
 
 A full-featured event management web application built with **Node.js, Express, SQLite, and EJS**. It allows organisers to create and manage events, and attendees to browse and book tickets.
 
+## Setup Instructions
+
+1. Install dependencies: Run ```npm install```
+
+2. Build the database.db: Run ```npm run build-db``` to create the database on Mac or Linux 
+or run ```npm run build-db-win``` to create the database on Windows
+
+3. Start the server: Run ```npm run start```
+
+4. Open in browser: http://localhost:3000
+
+---
+
 ## 📋 Core Features (Base Requirements)
 
 | Page | Description |
@@ -16,13 +29,13 @@ A full-featured event management web application built with **Node.js, Express, 
 | **Attendee Home Page** | Browse published events ordered by date |
 | **Attendee Event Page** | View event details and book tickets |
 
-### Main Home Page Details
+### Main Home Page
 - Default home page at `http://localhost:3000/`
 - Contains a link to the Organiser Home Page
 - Contains a link to the Attendee Home Page
 - *(Note: I extended this with authentication – see Extensions section)*
 
-### Organiser Home Page Details
+### Organiser Home Page
 - Display event manager name and description
 - "Create New Event" button → creates draft and redirects to edit
 - Dynamically populated list of **published events** with:
@@ -37,16 +50,14 @@ A full-featured event management web application built with **Node.js, Express, 
   - Publish button (updates status, timestamps publication, reloads page)
   - Delete button (removes from database, reloads page)
 
-### Site Settings Page Details
-- Heading: "Site Settings Page"
+### Site Settings Page
 - Form with text inputs for name and description
 - Dynamically populated with current settings
 - Submit button → updates settings → redirects to Organiser Home
 - Form validation (all fields required)
 - Back button → Organiser Home
 
-### Organiser Edit Event Page Details
-- Heading: "Organiser Edit Event Page"
+### Organiser Edit Event Page
 - Displays event creation date
 - Form with: title, description, full-price tickets (number + price), concession tickets (number + price)
 - Submit changes button
@@ -54,15 +65,13 @@ A full-featured event management web application built with **Node.js, Express, 
 - Last modified date updated on submit
 - Back button → Organiser Home
 
-### Attendee Home Page Details
-- Heading: "Attendee Home Page"
+### Attendee Home Page
 - Displays site name and description
 - List of published events ordered by date (next event at top)
 - Event title and date visible for each item
 - Clicking → Attendee Event Page
 
-### Attendee Event Page Details
-- Heading: "Attendee Event Page"
+### Attendee Event Page
 - Displays single event determined by URL
 - Information: title, description, date, ticket types, prices
 - User can select number of each ticket type
@@ -75,7 +84,7 @@ A full-featured event management web application built with **Node.js, Express, 
 
 ## 🚀 Extensions (Additional Features)
 
-These are features I added **beyond the base requirements** to demonstrate server-side development skills.
+These are features I added beyond the base requirements to demonstrate server-side development skills.
 
 ### Authentication & User Management
 | Feature | Description |
@@ -116,17 +125,6 @@ These are features I added **beyond the base requirements** to demonstrate serve
 | **Cancelled Attendees Modal** | View all cancelled bookings for an event |
 
 ---
-
-## Setup Instructions
-
-1. Install dependencies: Run ```npm install```
-
-2. Build the database.db: Run ```npm run build-db``` to create the database on Mac or Linux 
-or run ```npm run build-db-win``` to create the database on Windows
-
-3. Start the server: Run ```npm run start```
-
-4. Open in browser: http://localhost:3000
 
 ## 📦 Additional Libraries Used
 
