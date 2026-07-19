@@ -68,3 +68,16 @@ NB. we will ONLY run ```npm install```, ```npm run build-db```, and ```npm run s
 # Event Manager - CM2040 Coursework #
 
 A full-featured event management web application built with **Node.js, Express, SQLite, and EJS**. It allows organisers to create and manage events, and attendees to browse and book tickets. 
+
+
+
+| Feature | Description |
+| :--- | :--- |
+| **User Authentication** | Register and login with email + password (bcrypt hashing) |
+| **Role-Based Access** | Users can be Attendee, Organiser, or Both |
+| **Organiser Home** | Create, review, and edit events (draft/published) |
+| **Site Settings** | Change site name and description |
+| **Organiser Edit Event** | Create and amend events with ticket pricing |
+| **Attendee Home** | Browse published events ordered by date |
+| **Attendee Event** | View event details and book tickets |
+| **Main Home Page** | Links to Organiser and Attendee pages |
