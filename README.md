@@ -72,6 +72,7 @@ A full-featured event management web application built with **Node.js, Express, 
 
 
 | Feature | Description |
+| :--- | :--- |
 | **User Authentication** | Register and login with email + password (bcrypt hashing) |
 | **Role-Based Access** | Users can be Attendee, Organiser, or Both |
 | **Organiser Home** | Create, review, and edit events (draft/published) |
