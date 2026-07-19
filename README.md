@@ -117,31 +117,21 @@ These are features I added **beyond the base requirements** to demonstrate serve
 
 ---
 
-## 📂Project Structure
+## Setup Instructions
 
-midterm/
-├── index.js # Main application entry point
-├── package.json # Dependencies and scripts
-├── db_schema.sql # Database schema
-├── routes/
-│ ├── main.js # Home page routes (extended with auth)
-│ ├── auth.js # Login/Register/Logout routes (Extension)
-│ ├── organiser.js # Organiser dashboard routes
-│ └── attendee.js # Attendee dashboard routes
-├── views/
-│ ├── index.ejs # Extended with login/register
-│ ├── login.ejs # Extension
-│ ├── register.ejs # Extension
-│ ├── role-select.ejs # Extension
-│ ├── organiser-home.ejs
-│ ├── organiser-settings.ejs
-│ ├── organiser-edit.ejs
-│ ├── attendee-home.ejs
-│ ├── attendee-event.ejs
-│ └── attendee-bookings.ejs # Extension
-└── public/
-├── css/
-│ └── bootstrap.min.css
-├── js/
-│ └── bootstrap.bundle.min.js
-└── main.css # Custom styles
+1. Install dependencies: Run ```npm install```
+
+2. Build the database.db: Run ```npm run build-db``` to create the database on Mac or Linux 
+or run ```npm run build-db-win``` to create the database on Windows
+
+3. Start the server: Run ```npm run start```
+
+4. Open in browser: http://localhost:3000
+
+## 📦 Additional Libraries Used
+
+| Library | Purpose |
+| :--- | :--- |
+| **Bootstrap 5** | Frontend styling and responsive components |
+| **bcrypt** | Password hashing for secure storage |
+| **express-session** | Session management for user authentication |
